@@ -1,8 +1,25 @@
-<html>
-	<head>
-	<title>gr8workshops</title>
-	</head>
-	<body>
-	<h1>Coming Soon</h1>
-	</body>
-</html>
+---
+layout: default
+title: GR8Workshops
+---
+
+  
+	{% assign counter=0 %}
+    {% for post in site.posts %}
+    {% if counter < 10 %}
+    {% assign counter=counter | plus:1 %}
+    
+		<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+		<p class="post-info">Posted by {{post.author}} | Filed under {{ post.category }}</p>
+		{{ post.content }}
+		<p class="post-footer">
+		
+		Posted on<span class="date">{{ post.date | date_to_string }}</span>| 
+		<a href="{{ post.url }}">Read more</a>
+		</p>
+    
+    {% endif %}
+      
+      
+    {% endfor %}
+  

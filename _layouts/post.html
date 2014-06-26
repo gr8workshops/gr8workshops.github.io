@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<h2>{{ page.title }}</h2>
+<p class="post-info">Posted by {{ page.author}} | Filed under {{ page.categories }}</p>
+
+{{ content }}
+
+<p class="post-footer">
+Posted on<span class="date">{{ page.date | date_to_string }}</span>
+</p>
